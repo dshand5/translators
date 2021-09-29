@@ -1,7 +1,7 @@
 {
 	"translatorID": "5fdd9a37-da7f-4699-9fbc-b7d6875ee20c",
 	"label": "MediaWiki2",
-	"creator": "",
+	"creator": "hdwu2",
 	"target": "https?://(www.)?mediawiki.org/",
 	"minVersion": "3.0",
 	"maxVersion": "",
@@ -9,7 +9,7 @@
 	"inRepository": true,
 	"translatorType": 4,
 	"browserSupport": "gcsibv",
-	"lastUpdated": "2021-09-28 05:10:18"
+	"lastUpdated": "2021-09-29 03:18:56"
 }
 
 /* 
@@ -47,7 +47,7 @@ function  text ( docOrElem ,  selector ,  index )  {
 } 
 
 function  detectWeb ( doc ,  url )  { 
-    // Adjust the inspection of url as required 
+	// Adjust the inspection of url as required 
 	if  ( url . indexOf ( 'search' )  !=  - 1  &&  getSearchResults ( doc ,  true ))  { 
 		return  'multiple' ; 
 	} 
@@ -82,7 +82,7 @@ function  getSearchResults ( doc ,  checkOnly )  {
 	// Adjust the CSS Selectors  
 	var  rows  =  doc . querySelectorAll ( '.mw-search-result-heading a' ); 
 	for  ( var  i = 0 ;  i < rows . length ;  i ++ )  { 
-	    // Adjust if required, use Zotero.debug(rows) to check 
+		// Adjust if required, use Zotero.debug(rows) to check 
 		var  href  =  rows [ i ]. href ; 
 		// Adjust if required, use Zotero.debug(rows) to check 
 		var  title  =  ZU . trimInternal ( rows [ i ]. textContent ); 
@@ -111,14 +111,55 @@ function  scrape ( doc ,  url )  {
 	
 	item . attachments . push ({ 
 		url  :  url , 
-		title  :  "Wikimedia Snapshot" , 
+		title  :  "Wikimedia Snapshot3" , 
 		type  :  "text/html" 
 	}); 
 	
+	item.complete();
 } 
 
 
 
 /** BEGIN TEST CASES **/
-var testCases = []
+var testCases = [
+	{
+		"type": "web",
+		"url": "https://www.mediawiki.org/wiki/Citoid",
+		"items": [
+			{
+				"itemType": "encyclopediaArticle",
+				"title": "citoid",
+				"creators": [],
+				"archive": "Mediawiki",
+				"language": "en",
+				"libraryCatalog": "MediaWiki2",
+				"rights": "Creative Commons Attribution-ShareAlike License",
+				"attachments": [
+					{
+						"title": "Wikimedia Snapshot",
+						"type": "text/html"
+					}
+				],
+				"tags": [
+					{
+						"tag": "Extensions with VisualEditor support"
+					},
+					{
+						"tag": "WMF Projects"
+					},
+					{
+						"tag": "WMF Projects missing start date"
+					}
+				],
+				"notes": [],
+				"seeAlso": []
+			}
+		]
+	},
+	{
+		"type": "web",
+		"url": "https://www.mediawiki.org/w/index.php?search=zotero&title=Special:Search&profile=default&fulltext=1&ns0=1&ns12=1&ns100=1&ns102=1&ns104=1&ns106=1",
+		"items": "multiple"
+	}
+]
 /** END TEST CASES **/
