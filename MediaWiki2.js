@@ -1,7 +1,7 @@
 {
 	"translatorID": "5fdd9a37-da7f-4699-9fbc-b7d6875ee20c",
 	"label": "MediaWiki2",
-	"creator": "hdwu2",
+	"creator": "hdwu3",
 	"target": "https?://(www.)?mediawiki.org/",
 	"minVersion": "3.0",
 	"maxVersion": "",
@@ -9,7 +9,7 @@
 	"inRepository": true,
 	"translatorType": 4,
 	"browserSupport": "gcsibv",
-	"lastUpdated": "2021-09-29 03:18:56"
+	"lastUpdated": "2021-09-29 03:28:21"
 }
 
 /* 
