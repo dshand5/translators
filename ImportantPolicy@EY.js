@@ -9,7 +9,7 @@
 	"inRepository": true,
 	"translatorType": 4,
 	"browserSupport": "gcsibv",
-	"lastUpdated": "2021-09-29 12:30:02"
+	"lastUpdated": "2021-09-30 01:59:27"
 }
 
 /* 
@@ -100,8 +100,8 @@ function  scrape ( doc ,  url )  {
 	//item.title = text(doc,'html head meta')
 	
 	item.title = attr(doc, 'meta[property="og:title"]', 'content');
-	//item.abstract = attr(doc, 'meta[property="og:description"]', 'content');
-	item.creator = "行政院全球資訊網-重要政策";
+	item.abstractNote = attr(doc, 'meta[property="og:description"]', 'content');
+	item.websiteTitle = "行政院全球資訊網-重要政策";
 	
 	//item.Date = text(doc,'html body#PageBody div.wrapper form#form1 section.content-wrap div.container div.words div.ail p.first_p span.date_style2 font');
 	//item.date = "日期：110-07-20";
